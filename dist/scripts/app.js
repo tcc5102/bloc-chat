@@ -7,8 +7,9 @@ function() {
       });
 
     $stateProvider
-      .state('main', {
+      .state('home', {
         url: '/',
+        templateUrl: '/templates/home.html'
       });
   }
 
