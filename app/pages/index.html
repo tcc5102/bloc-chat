@@ -7,18 +7,15 @@
 </head>
 <body>
 
-
+<ui-view></ui-view>
 
   <!-- Angular -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
-  <!-- AngularFire -->
-  <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
-
-  <script src="/scripts/app.js"></script>
   <script>
+
     // Initialize Firebase
     var config = {
       apiKey: "AIzaSyBMh_xSMnpIdwWcrkoKS4QIQkV-hssjqM8",
@@ -27,6 +24,13 @@
       storageBucket: "bloc-chat-58eff.appspot.com",
     };
     firebase.initializeApp(config);
+
   </script>
+  <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+  <script src="/scripts/app.js"></script>
+  <script src="/scripts/controllers/HomeCtrl.js"></script>
+  <script src="/scripts/services/Room.js"></script>
 </body>
 </html>
+
+
