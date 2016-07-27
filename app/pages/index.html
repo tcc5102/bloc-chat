@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html ng-app="blocChat">
 <head lang="en">
-    <meta charset="UTF-8">
-    <title>bloc-chat</title>
-    <link rel="stylesheet" href="/styles/style.css">
+  <meta charset="UTF-8">
+  <title>bloc-chat</title>
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
 </head>
 <body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-header-link" ui-sref='#'> <h3 class="myHeader">Chat Room </h3> </a>
+        <h6 class="subHeader">Where Friends Can Talk!</h6>
+      </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="login"><a ui-sref='about'>About</a></li>
+          <li class="login"><a ui-sref='Main'>Home</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <main>
+      <ui-view> </ui-view>
+    </main>
+  </div>
 
-<ui-view></ui-view>
 
   <!-- Angular -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
