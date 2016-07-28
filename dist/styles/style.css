@@ -1,16 +1,16 @@
 .navbar{
-  background-color: #1e1e80 !important;
+  background-color: #b4ce79 !important;
   border: transparent !important;
 }
 
 .navbar-header-link h3 {
-  color: white;
+  color: #831f1f;
   font-family: 'Droid Serif', serif;
   font-size: 30px;
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: white !important;
+    color: #831f1f !important;
   }
 .navbar-header-link:hover, .navbar-header-link:active, .navbar-header-link:visited {
   text-decoration: none;
@@ -18,7 +18,8 @@
 
 .navbar-header-link h3:hover {
   text-decoration: none;
-  color: #D34747;
+  color: yellow;
+  cursor: pointer;
 }
 
 .navbar-header-link h3:hover, .navbar-header-link h3:active, .navbar-header-link h3:visited {
@@ -26,14 +27,26 @@
 }
 
 .subHeader{
-  padding-left: 10px;
-  color: orange;
+  color: black;
+  border-bottom: 1px solid black;
+}
+
+.headline{
+  color: #831f1f;
+}
+
+.button{
+  border-radius: 12px;
+  background-color: white;
+  border: 2px solid #831f1f;
+  margin: 2px;
+  color: #831f1f;
 }
 
 html,body,.container
 {
     height:100%;
-    background-color:#1e1e80;
+    background-color:#b4ce79;
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;
@@ -41,10 +54,27 @@ html,body,.container
     color: white;
 }
 
+.first{
+  float: right;
+  border-left: 5px solid white;
+}
+
+.second{
+  float: none;
+  background-color: #b4ce79;
+}
+
+.clear{
+  clear: none;
+}
+
+.login{
+  background-color: #b4ce79;
+}
+
 aside{
   background: #1e1e80;
-  color: white;
-  padding-bottom: 0px;
+  color: inherit;
 }
 
 .input-group{
@@ -57,8 +87,8 @@ aside{
 }
 
 section{
-  color: white;
-  background: #1e1e80;
+  color: black;
+  background: #b4ce79;
   padding-bottom: 100%;
 
 }
@@ -93,7 +123,16 @@ main{
 .room-list{
   margin: 25px;
   padding: 10px;
-  color: orange;
+  color: black;
+}
+
+.room-list :hover{
+  cursor: pointer;
+}
+
+.login{
+  border: 1px solid white;
+  margin-top: 10px;
 }
 
 .loginheader{
@@ -103,7 +142,9 @@ main{
 
 .message_list{
   margin: 25px;
-  padding: 10px;
+  padding: 20px;
+  border: 1px solid black;
+  background-color: white;
 }
 
 .message-form{

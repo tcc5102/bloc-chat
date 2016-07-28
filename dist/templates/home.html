@@ -1,27 +1,27 @@
 <div class="row-fluid equal">
-  <aside class="col-md-3">
-    <h1 class="text-center header">Chat Rooms</h1>
-    <div>
-      <table class="room-list">
-        <tr ng-repeat="room in MainModal.rooms">
-          <td ng-click="MainModal.setRoom(room)"> {{room.name}} </td>
-          <td>
-            <span ng-click="MainModal.deleteRoom(room)" type="button"></span>
-          </td>
-        </tr>
-      </table>
-    </div>
-    <div class="new_room">
-      <button ng-click="MainModal.open()" class="btn btn-primary text-center">Create New Room</button>
-    </div>
-    <div ng-repeat="room in ome.rooms">
+  <section class="first clear">
+      <h1 class="text-center headline">Chat Rooms</h1>
+      <div>
+        <table class="room-list">
+          <tr ng-repeat="room in MainModal.rooms">
+            <td ng-click="MainModal.setRoom(room)"> {{room.name}} </td>
+            <td>
+              <span ng-click="MainModal.deleteRoom(room)" type="button"></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="new_room">
+        <button ng-click="MainModal.open()" class="button">Create New Room</button>
+      </div>
+      <div ng-repeat="room in ome.rooms">
 
-    <div>{{ room.name }}</div>
-    </div>
-  </aside>
+      <div>{{ room.name }}</div>
+      </div>
+  </section>
 
-  <section class="col-md-9">
-    <h2 class="text-center"> Messages </h2>
+  <section class="second clear">
+    <h2 class="text-center headline"> Messages </h2>
     <p class="lead text-center"> <u> {{ MainModal.currentRoom.name}} </u></p>
     <div>
       <div class="message_list">
