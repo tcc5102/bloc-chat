@@ -4,7 +4,8 @@
 
     var roomRef = firebase.database().ref().child("rooms");
     var firebaseRef = new firebase.database().ref();
-
+    var messageRef = new firebase.database().ref().child("messages");
+    var messages = $firebaseArray(messageRef);
     var rooms = $firebaseArray(roomRef);
 
     Room.addRoom = function(room) {
@@ -13,6 +14,12 @@
 
     Room.delete = function(roomID) {
       rooms.$remove(roomID);
+    };
+
+    Room.getMessages = function(roomID, callback) {
+      messageRef.orderByChild('roomID').equalTo(roomID).on('value', function(messages) {
+        callback(messages.val());
+      });
     };
 
     Room.bind = function() {
