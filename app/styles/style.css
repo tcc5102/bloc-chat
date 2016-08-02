@@ -43,6 +43,10 @@
   color: #831f1f;
 }
 
+.login-box{
+  margin-left: 20px;
+}
+
 html,body,.container
 {
     height:100%;
