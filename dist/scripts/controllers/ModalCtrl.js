@@ -38,6 +38,7 @@
 
     ctrl.sendMessage = function(message){
       message.userName = $cookies.get('blocChatCurrentUser');
+      console.log(message.userName);
       message.roomId = $scope.roomId;
       MessageService.sendMessage(message);
     };

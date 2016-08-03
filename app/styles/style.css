@@ -152,9 +152,17 @@ main{
 }
 
 .message-form{
-  margin-left: -40px;
-  position: absolute;
+  margin-left: 40px;
+  position: relative;
   bottom: 0;
+}
+
+.message-button{
+
+}
+
+.message-box{
+  width: 200px;
 }
 
 footer{

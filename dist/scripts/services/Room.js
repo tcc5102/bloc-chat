@@ -1,9 +1,9 @@
-(function() {
-  function Room($firebaseArray) {
+(function(){
+  function Room($firebaseArray){
     var Room = {};
 
-    var roomRef = firebase.database().ref().child("rooms");
     var firebaseRef = new firebase.database().ref();
+    var roomRef = firebase.database().ref().child("rooms");
     var messageRef = new firebase.database().ref().child("messages");
     var messages = $firebaseArray(messageRef);
     var rooms = $firebaseArray(roomRef);
@@ -21,6 +21,14 @@
         callback(messages.val());
       });
     };
+
+//    Room.bindLastTaskToValue = function(callback) {
+//      roomRef.orderByChild("createdAt").limitToLast(1).once("value", function (snap) {
+//        snap.forEach(function (room) {
+//          callback(room.key(), room.val());
+//        });
+//      });
+//    };
 
     Room.bind = function() {
       return rooms;

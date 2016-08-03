@@ -1,6 +1,7 @@
 (function() {
   function BlocChatCookies($cookies, $uibModal) {
     var userName = $cookies.get('blocChatCurrentUser');
+    console.log(userName);
     if (!userName || userName === '') {
       $uibModal.open({
         templateUrl: '/templates/login.html',
@@ -8,6 +9,7 @@
           $scope.createUserName = function(userName){
             if(userName && userName !== ''){
               $cookies.blocChatCurrentUser = userName;
+//              $cookies.put('blocChatCurrentUser', userName);
               $uibModalInstance.close();
             } else{
               $scope.errorMessage = 'Invalid username.';
