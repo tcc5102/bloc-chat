@@ -17,5 +17,7 @@
 
   angular
     .module('blocChat')
-    .controller('LoginCtrl', ['$scope', '$cookies', '$uibModalInstance', LoginCtrl]);
+    .controller('LoginCtrl', ['$scope', '$cookies', '$uibModalInstance', '$firebase', LoginCtrl]);
 })();
+
+// firebase?
