@@ -1,5 +1,5 @@
 (function(){
-  function ModalCtrl($uibModal, Room, MessageService, $scope){
+  function ModalCtrl($uibModal, Room, MessageService, $scope, $cookies){
     var ctrl = this;
 
     ctrl.rooms = Room.bind();
@@ -8,12 +8,12 @@
 //      Room.bindLastTaskToValue(function(key, room){
 //        ctrl.currentRoom = room;
 //        $scope.roomId = key;
-////
+//
 //        Room.getMessages(key, function (messages) {
 //          $scope.messages = messages;
 //        });
 //      });
-//    })
+//    });
 
     ctrl.open = function () {
         $uibModal.open({
@@ -36,12 +36,11 @@
 
     };
 
-
-//    ctrl.sendMessage = function(message){
-//      message.userName = $cookies.get('chatRoomCurrentUser');
-//      message.roomId = $scope.roomId;
-//      MessageService.sendMessage(message);
-//    }
+    ctrl.sendMessage = function(message){
+      message.userName = $cookies.get('blocChatCurrentUser');
+      message.roomId = $scope.roomId;
+      MessageService.sendMessage(message);
+    };
 
   ctrl.deleteRoom = function(room){
     Room.delete(room);
@@ -51,6 +50,6 @@
 
   angular
     .module('blocChat')
-    .controller('ModalCtrl', ['$uibModal', 'Room', 'MessageService', '$scope', ModalCtrl]);
+    .controller('ModalCtrl', ['$uibModal', 'Room', 'MessageService', '$scope', '$cookies', ModalCtrl]);
 
 })();
