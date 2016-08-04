@@ -16,7 +16,7 @@
       </div>
       <div ng-repeat="room in home.rooms">
 
-      <div>{{ room.name }}</div>
+      <div ng-click="MainModal.setRoom(room)">{{ room.name }}</div>
       </div>
   </section>
 
@@ -25,7 +25,7 @@
     <p class="lead text-center"> <u> {{ MainModal.currentRoom.name}} </u></p>
     <div>
       <div class="message_list">
-        <p ng-repeat="message in messages"> <strong><u> {{message.username}} </u></strong><br> {{message.content}} </p>
+        <p ng-repeat="message in MainModal.getMessagesByRoom()"> <strong><u> {{message.username}} </u></strong><br> {{message.content}} </p>
       </div>
 
       <div>

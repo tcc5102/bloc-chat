@@ -2,7 +2,7 @@
   function MessageService($firebaseArray, $cookies){
     console.log("message service loaded");
     var MessageService ={};
-//    var firebaseRef = new firebase.database().ref();
+    var firebaseRef = new firebase.database().ref();
     var messageRef = new firebase.database().ref().child("messages");
     var messages = $firebaseArray(messageRef);
 
@@ -14,9 +14,14 @@
                 });
     };
 
-    MessageService.bind = function(){
-      return messages;
-    };
+//    MessageService.getByRoom = function(messages) {
+//      messageRef.orderByChild('RoomId').equalTo(roomId).on('value', function(messages) {
+//        return(messages.val());
+//      });
+//    };
+
+
+    MessageService.all = messages;
 
     return MessageService;
   }

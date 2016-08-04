@@ -1,5 +1,5 @@
 (function(){
-  function Room($firebaseArray){
+  function Room($firebaseArray, MessageService){
     var Room = {};
 
     var firebaseRef = new firebase.database().ref();
@@ -12,8 +12,8 @@
       rooms.$add({name: room.name})
     };
 
-    Room.delete = function(roomID) {
-      rooms.$remove(roomID);
+    Room.delete = function(roomId) {
+      rooms.$remove(roomId);
     };
 
     Room.getMessages = function(roomID, callback) {
@@ -22,17 +22,13 @@
       });
     };
 
-//    Room.bindLastTaskToValue = function(callback) {
-//      roomRef.orderByChild("createdAt").limitToLast(1).once("value", function (snap) {
-//        snap.forEach(function (room) {
-//          callback(room.key(), room.val());
-//        });
+//    MessageService.getByRoom = function(roomId) {
+//      messageRef.orderByChild('roomId').equalTo(roomId).on('value', function(messages) {
+//        return(messages.val());
 //      });
 //    };
 
-    Room.bind = function() {
-      return rooms;
-    };
+    Room.all = rooms;
 
     return Room;
   };
@@ -40,5 +36,5 @@
 
   angular
     .module('blocChat')
-    .factory('Room', ['$firebaseArray', Room]);
+    .factory('Room', ['$firebaseArray', 'MessageService', Room]);
 })();
