@@ -25,7 +25,9 @@
     <p class="lead text-center"> <u> {{ MainModal.currentRoom.name}} </u></p>
     <div>
       <div class="message_list">
-        <p ng-repeat="message in MainModal.getMessagesByRoom()"> <strong><u> {{message.username}} </u></strong><br> {{message.content}} </p>
+        <p ng-repeat="message in MainModal.currentMessages">
+          <strong><u> {{message.userName}} </u></strong><br> {{message.content}}
+        </p>
       </div>
 
       <div>

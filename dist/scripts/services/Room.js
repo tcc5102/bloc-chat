@@ -16,18 +16,6 @@
       rooms.$remove(roomId);
     };
 
-    Room.getMessages = function(roomID, callback) {
-      messageRef.orderByChild('roomID').equalTo(roomID).on('value', function(messages) {
-        callback(messages.val());
-      });
-    };
-
-//    MessageService.getByRoom = function(roomId) {
-//      messageRef.orderByChild('roomId').equalTo(roomId).on('value', function(messages) {
-//        return(messages.val());
-//      });
-//    };
-
     Room.all = rooms;
 
     return Room;

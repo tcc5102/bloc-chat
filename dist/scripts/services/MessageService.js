@@ -7,6 +7,7 @@
     var messages = $firebaseArray(messageRef);
 
     MessageService.sendMessage = function(message){
+      console.log(message);
       messages.$add({userName: message.userName,
                   content: message.content,
                   sentAt: '',
@@ -14,18 +15,17 @@
                 });
     };
 
-//    MessageService.getByRoom = function(messages) {
-//      messageRef.orderByChild('RoomId').equalTo(roomId).on('value', function(messages) {
-//        return(messages.val());
-//      });
-//    };
+    MessageService.getByRoom = function(roomId) {
+      var messages = $firebaseArray(messageRef.orderByChild('roomId').equalTo(roomId));
+        console.log(messages);
+        return(messages);
+    };
 
 
     MessageService.all = messages;
 
     return MessageService;
   }
-
 
   angular
     .module('blocChat')

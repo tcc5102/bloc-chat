@@ -19,17 +19,13 @@
     ctrl.setRoom = function(room){
       console.log("set room");
       ctrl.currentRoom = room;
-      Room.getMessages(room.$id, function (messages) {
-        $scope.messages = messages;
-        $scope.roomId = room.$id;
-      });
-
+      ctrl.currentMessages = MessageService.getByRoom(ctrl.currentRoom.$id);
     };
 
     ctrl.sendMessage = function(message){
       message.userName = $cookies.get('blocChatCurrentUser');
       console.log(message.userName);
-      message.roomId = $scope.roomId;
+      message.roomId = ctrl.currentRoom.$id;
       MessageService.sendMessage(message);
     };
 
@@ -37,10 +33,6 @@
       Room.delete(room);
     };
 
-    ctrl.getMessagesByRoom = function(room) {
-      console.log(ctrl.currentRoom);
-      return MessageService.all;
-    };
 
 
   }
